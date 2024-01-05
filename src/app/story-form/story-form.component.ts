@@ -1,6 +1,6 @@
 // story-form.component.ts
 
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-story-form',
@@ -12,33 +12,19 @@ export class StoryFormComponent {
   storyTitle: string = '';
   storyPoints: number = 0;
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   addNewStory(): void {
-
-    this.storyTitle = "sstghs"
-    this.storyPoints=1
-
-    
-    // if (!this.storyTitle.trim() && this.storyPoints <= 0) {
-    //   alert('Please enter valid story details.');
-    //   return;
-    // }
+    console.log('Title:', this.storyTitle);
+    console.log('Points:', this.storyPoints);
+    if (!this.storyTitle.trim() && this.storyPoints <= 0) {
+      alert('Please enter valid story details.');
+      return;
+    }
 
     this.addStory.emit({ title: this.storyTitle, points: this.storyPoints });
-
-    this.storyTitle = "sss"
-    this.storyPoints=2
-    this.addStory.emit({ title: this.storyTitle, points: this.storyPoints });
-    this.storyTitle = "ssrths"
-    this.storyPoints=3
-    this.addStory.emit({ title: this.storyTitle, points: this.storyPoints });
-    this.storyTitle = "swgts"
-    this.storyPoints=2
-    this.addStory.emit({ title: this.storyTitle, points: this.storyPoints });
-    this.storyTitle = "sq34tss"
-    this.storyPoints=2
-    this.addStory.emit({ title: this.storyTitle, points: this.storyPoints });
-
     this.resetForm();
+    this.cdr.detectChanges();
   }
 
   resetForm(): void {

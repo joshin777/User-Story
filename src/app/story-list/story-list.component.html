@@ -1,20 +1,12 @@
-<!-- story-list.component.html -->
 
-<div>
+
+<div class="story-list-container">
   <h3>Story List</h3>
-  
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center;">Title</th>
-      <th style="text-align: center;">Points</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let story of stories_from_form">
-      <td style="text-align: center;">{{ story.title }}</td>
-      <td style="text-align: center;">{{ story.points }}</td>
-    </tr>
-  </tbody>
-</table>
+
+  <div class="story-item" *ngFor="let story of stories" (click)="toggleSelection(story)" [class.selected]="isStorySelected(story)">
+    <div class="title-heading">
+      <p>{{ story.title }}</p>
+    </div>
+    <div class="points-heading">{{ story.points }}</div>
+  </div>
 </div>

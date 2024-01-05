@@ -1,8 +1,9 @@
 // app.component.ts
 
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StoryService } from './story.service';
+import { StoryListComponent } from './story-list/story-list.component';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,11 @@ export class AppComponent {
   titleInput: string = ''; 
   selectedStories: { title: string, points: number }[] = [];
   autoSelectStoriesEvent: any;
+  clearStoriesEvent: any;
 
-    constructor(private storyService: StoryService, private cdr: ChangeDetectorRef) {}
+  @ViewChild(StoryListComponent, { static: false }) storyListComponent: StoryListComponent | undefined;
+    
+  constructor(private storyService: StoryService, private cdr: ChangeDetectorRef) {}
   
   setTargetSprintPoints(targetSprintPoints: number): void {
     this.targetSprintPoints = targetSprintPoints;
@@ -35,7 +39,18 @@ export class AppComponent {
     // Emit an event to notify the parent component
     this.autoSelectStoriesEvent.emit();
   }
-
+  handleClearStories(): void {
+    // if (this.storyListComponent) {
+    //   this.storyListComponent.clearStories();
+    // }
+    this.clearStories();
+  }
+  handleClearSelectedStories(): void {
+    // Call the clearSelectedStories method in the StoryListComponent
+    if (this.storyListComponent) {
+      this.storyListComponent.clearSelectedStories();
+    }
+  }
   fetchStoriesByTitle(title: string) {
     // Replace this with actual logic to fetch stories from your data source
     // For demonstration purposes, using a mock Observable
@@ -71,11 +86,9 @@ export class AppComponent {
 
   clearStories(): void {
     this.stories = [];
-    this.totalSprintPoints = 0;
-    this.clearSelectedStories();
-
-    // Trigger change detection
-    this.cdr.detectChanges();
+    // if (this.storyListComponent) {
+    //   this.storyListComponent.clearStories();
+    // }
   }
 
   clearSelectedStories(): void {

@@ -1,19 +1,47 @@
 /* story-list.component.css */
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px solid black; /* Set the border style and color */
-  }
-  
-  th, td {
-    border: 1px solid black; /* Set the border style and color for table cells */
-    padding: 8px; /* Add some padding for better visual appearance */
-    text-align: left; /* Align text to the left within cells */
-  }
-  
-  /* Optional: Add styling for the header row */
-  thead {
-    background-color: #f2f2f2; /* Set a background color for the header row */
-  }
-  
+.story-list-container {
+  margin-top: 20px;
+}
+
+.story-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* story-list.component.css */
+
+.story-list-container {
+  margin-top: 20px;
+}
+
+.story-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.selected {
+  background-color: lightblue; /* Choose your desired background color for the entire item */
+}
+
+.title-heading {
+  font-weight: bold;
+}
+
+.title-heading {
+  font-weight: bold;
+}
+
+.points-heading {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
