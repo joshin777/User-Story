@@ -4,7 +4,7 @@
   <!-- Column 1: Add New Story and Target Sprint Points -->
   <div class="column">
     <app-story-form (addStory)="addStory($event)"></app-story-form>
-    <app-sprint-target-form
+    <app-sprint-target-form [stories]="stories"
       (setTargetSprintPointsEvent)="setTargetSprintPoints($event)"
       (autoSelectStoriesEvent)="autoSelectStories()"
       (clearStories)="clearStories()"

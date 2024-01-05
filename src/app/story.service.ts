@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +15,6 @@ export class StoryService {
     const apiUrl = `your-api-url/${title}`;
     return this.http.get<{ title: string, points: number }[]>(apiUrl);
   }
+
+  
 }
