@@ -1,13 +1,16 @@
-<!-- sprint-target-form.component.html -->
+
 
 <div class="sprint-target-form-container">
-  <h3 for="targetSprintPoints">Target Sprint Points:</h3>
+  <h3 for="targetSprintPoints"><u>Target Sprint Points:</u></h3>
   <input type="number" id="targetSprintPoints" [(ngModel)]="targetSprintPoints" required>
   <button (click)="setTargetSprintPoints()">Set Target Sprint</button>
 </div>
 
 <div class="button-container">
   <button (click)="autoSelectStories()">Auto Select Stories</button>
-  <button (click)="clearStories()">Clear Stories</button>
-  <button (click)="clearSelectedStories()">Clear Selected Stories</button>
+  <span style="padding-left: 10px;">
+    <button (click)="clearStories()">Clear Stories</button>
+  </span>
+  
+  <!-- <button (click)="clearSelectedStories()">Clear Selected Stories</button> -->
 </div>

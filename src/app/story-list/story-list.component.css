@@ -45,3 +45,75 @@
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+.selected-stories-container {
+  margin-top: 20px;
+}
+
+.selected-story-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: lightblue; /* Choose your desired background color */
+}
+
+.title-heading {
+  font-weight: bold;
+}
+
+.points-heading {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+button {
+  background-color: rgb(32, 142, 18);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 600px) {
+  .sprint-target-form-container {
+    max-width: 100%;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.story-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-item,
+.selected-story-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.selected-story-item {
+  background-color: lightblue; /* Background color for selected stories */
+}
+
+.button-container {
+  margin-top: 50px; /* Adjust this value to set the height difference */
+}

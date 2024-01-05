@@ -1,19 +1,19 @@
-<!-- app.component.html -->
+
 
 <div class="app-container">
-  <!-- Column 1: Add New Story and Target Sprint Points -->
   <div class="column">
     <app-story-form (addStory)="addStory($event)"></app-story-form>
     <app-sprint-target-form
       (setTargetSprintPointsEvent)="setTargetSprintPoints($event)"
       (autoSelectStoriesEvent)="autoSelectStories()"
       (clearStoriesEvent)="handleClearStories()"
+      [stories]="stories"
+      (clearSelectedStories)="clearSelectedStories"
       (clearSelectedStoriesEvent)="handleClearSelectedStories()"
     ></app-sprint-target-form>
   </div>
 
-  <!-- Column 2: Story List -->
   <div class="column">
-    <app-story-list [stories]="stories"></app-story-list>
+    <app-story-list [stories]="stories" [autoSelectedStories]="autoSelectedStories"></app-story-list>
   </div>
 </div>

@@ -1,4 +1,4 @@
-/* story-form.component.css */
+
 
 .story-form-container {
     max-width: 400px;
@@ -6,7 +6,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f2f2f2; /* Grey background color */
+    background-color: #f2f2f2; 
   }
   
   .form-group {
@@ -28,7 +28,7 @@
   }
   
   button {
-    background-color: rgb(32, 142, 18); /* Grey background color for the button */
+    background-color: rgb(32, 142, 18);
     color: white;
     padding: 10px 15px;
     border: none;

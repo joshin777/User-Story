@@ -1,12 +1,24 @@
-
-
 <div class="story-list-container">
-  <h3>Story List</h3>
+  <h3><u>Story List:</u></h3>
 
   <div class="story-item" *ngFor="let story of stories" (click)="toggleSelection(story)" [class.selected]="isStorySelected(story)">
     <div class="title-heading">
       <p>{{ story.title }}</p>
     </div>
     <div class="points-heading">{{ story.points }}</div>
+  </div>
+
+  <div class="selected-stories-container">
+    <h3><u>Selected Stories:</u></h3>
+  
+    <div class="selected-story-item" *ngFor="let selectedStory of autoSelectedStories">
+      <div class="title-heading">
+        <p>{{ selectedStory.title }}</p>
+      </div>
+      <div class="points-heading">{{ selectedStory.points }}</div>
+    </div>
+    <div class="button-container">
+      <button (click)="clearSelectedStories()">Clear Selected Stories</button>
+    </div>
   </div>
 </div>
